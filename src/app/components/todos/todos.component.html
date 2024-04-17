@@ -1,0 +1,22 @@
+
+<div class="todos">
+    <div class="todo">
+        <label>Content</label>
+        <input type="text" [(ngModel)]="content" />
+        <button class="add" (click)="addTodo()">Add</button>
+    </div>
+</div>
+
+<div class="todos">
+    <div class="todo">
+        <ul class="todo-list">
+            @for (todo of todoService.todos; track todo.content) {
+            <li>
+                <div class="content">{{todo.content}}
+                </div>
+                <button class="delete" (click)="deleteTodo( todo.id )">Remove</button>
+            </li>
+            }
+        </ul>
+    </div>
+</div>
